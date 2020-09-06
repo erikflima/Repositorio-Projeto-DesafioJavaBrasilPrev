@@ -29,26 +29,29 @@ public class Cliente implements Serializable {
     @GeneratedValue(strategy=GenerationType.AUTO)
 	private Long idcli;
 	
+	
 	@Column(name = "nome", nullable = false)
 	private String  nome;
+	
 	
 	@Column(name = "cpf", nullable = false)
 	private String cpf;	
 	
+	
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "dataCriacao", nullable = false)
 	private Date dataCriacao;
+	
 	
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "dataAtualizacao", nullable = false)
 	private Date dataAtualizacao;
 	
 
-	@OneToMany(mappedBy = "cliente", fetch = FetchType.EAGER, cascade = CascadeType.ALL)	
+	@OneToMany(mappedBy = "cliente", fetch = FetchType.LAZY, cascade = CascadeType.ALL)	
 	private List<Pedido> pedidos;
 	
-	
-	
+
 	public Cliente() {
 	}
 

@@ -2,16 +2,23 @@ package com.eriklima.desafio.response;
 import java.util.ArrayList;
 import java.util.List;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
-//-----Classe que serve para ser a resposta de meus servicos rest. Serve como uma resposta padrao.-----//
+
+@ApiModel (description = "Representa a resposta padrão dos endpoints")
 public class ResponsePadronizado<ClasseRecebida> {
 
 	
+	@ApiModelProperty(value = "Conteúdo da resposta")
 	private ClasseRecebida conteudoDoResponse;
-	private List<String>   errors;
+	
+	@ApiModelProperty(value = "Lista de mensagens")
+	private List<MensagemPadrao> mensagens;
 
 	
 	public ResponsePadronizado(){
+		super();
 	}
 
 	
@@ -22,6 +29,7 @@ public class ResponsePadronizado<ClasseRecebida> {
 		return conteudoDoResponse;
 	}
 
+	
 	public void setConteudoDoResponse(ClasseRecebida conteudoDoResponse) {
 		
 		this.conteudoDoResponse = conteudoDoResponse;
@@ -29,22 +37,22 @@ public class ResponsePadronizado<ClasseRecebida> {
 	
 	
 	
-	
-	
-	public List<String> getErrors() {
+	public List<MensagemPadrao> getMensagens() {
 		
-		if (this.errors == null) {
+		if (this.mensagens == null) {
 			
 			//Nao retorna "null", e sim um objeto vazio.
-			this.errors = new ArrayList<String>();
+			this.mensagens = new ArrayList<MensagemPadrao>();
 		}
 		
-		return errors;
+		return mensagens;
 	}
 
-	public void setErrors( List<String> errors ) {
+	
+	public void setMensagens( List<MensagemPadrao> mensagens ) {
 		
-		this.errors = errors;
+		this.mensagens = mensagens;
 	}
+
 
 }

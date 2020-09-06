@@ -2,7 +2,6 @@ package com.eriklima.desafio.entity;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -11,6 +10,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.PostPersist;
+import javax.persistence.PostUpdate;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
@@ -31,10 +32,6 @@ public class Pedido implements Serializable {
 	private Long idpedido;
 
 
-	@Column(name = "precoPedido", nullable = false)
-	private Double precoPedido;	
-	
-
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "dataCriacao", nullable = false)
 	private Date dataCriacao;
@@ -44,7 +41,6 @@ public class Pedido implements Serializable {
 	@Column(name = "dataAtualizacao", nullable = false)
 	private Date dataAtualizacao;
 	
-
 
 	@ManyToOne(fetch = FetchType.EAGER)
 	private Cliente cliente;
@@ -68,17 +64,6 @@ public class Pedido implements Serializable {
 	public void setIdpedido(Long idpedido) {
 		this.idpedido = idpedido;
 	}
-
-
-	public Double getPrecoPedido() {
-		return precoPedido;
-	}
-
-
-	public void setPrecoPedido(Double precoPedido) {
-		this.precoPedido = precoPedido;
-	}
-
 
 	public Cliente getCliente() {
 		return cliente;
@@ -109,16 +94,15 @@ public class Pedido implements Serializable {
 		this.dataAtualizacao = dataAtualizacao;
 	}
 
-	/*
+	
 	public List<Produto> getProdutos() {
 		return produtos;
 	}
 
-
 	public void setProdutos(List<Produto> produtos) {
 		this.produtos = produtos;
 	}
-	*/
+	
 	
 	//----------Metodos adicionais--------------//	
 	
@@ -135,5 +119,17 @@ public class Pedido implements Serializable {
         dataCriacao      = atual;
         dataAtualizacao  = atual;
     }	
+    
+    
+    @PostPersist
+    public void postPersist() {
+  
+    }	   
+    
+    @PostUpdate
+    public void postUdate() {
+    	
+
+    }
 
 }
