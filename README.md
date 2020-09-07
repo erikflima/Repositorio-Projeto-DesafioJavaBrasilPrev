@@ -16,6 +16,9 @@
 
 📍 Link para acessar a aplicação sendo executada na plataforma Heroku:
 
+ - Documentação: https://shrouded-depths-86266.herokuapp.com/swagger-ui.html#/
+ - Raiz da aplicação: https://shrouded-depths-86266.herokuapp.com
+
 
 ✅ Site pessoal e currículo:
   - http://eriklima.com/
