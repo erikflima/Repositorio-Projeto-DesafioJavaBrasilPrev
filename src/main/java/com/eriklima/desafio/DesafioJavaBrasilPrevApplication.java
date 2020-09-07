@@ -9,7 +9,7 @@ public class DesafioJavaBrasilPrevApplication {
 	public static void main(String[] args) {
 
 		SpringApplication.run(DesafioJavaBrasilPrevApplication.class, args);
-
+ 
 	}
 
 }
