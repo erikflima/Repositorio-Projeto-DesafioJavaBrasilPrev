@@ -1,0 +1,332 @@
+{
+	"info": {
+		"_postman_id": "4f207634-8612-49ed-9027-6dbe17ea1635",
+		"name": "Chamadas - Projeto DesafioJavaBrasilPrev",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "0-Requisição - Documentação com Swagger",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "va",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "d41d8cd98f00b204e9800998ecf8427ewwop@fd$&-@erkcnada1989z",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/swagger-ui.html#",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"swagger-ui.html"
+					],
+					"hash": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1-Requisição - api/cliente/cadastrar",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \n    \"cpf\": \"33718136813\",\n    \"nome\": \"Erik Lima\"  \n    \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/cliente/cadastrar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cliente",
+						"cadastrar"
+					]
+				},
+				"description": "Como chamar o endpoint de inserir item no pedido:\r\n\r\n Primeiro devo chamar os endpoints abaixo para coletar os dados do body:\r\n  - Passo 1 > Pegar um \"itemPedidoVendaBean\" -> Chamar o endpoint de buscarProdutoPeloCodigo\r\n  - Passo 2 > Pegar um \"pedidoVendaBean\"     -> Chamar o endpoint de iniciarVenda\r\n  - Passo 3 > Pegar um \"usuarioVa\"           -> Chamar o endpoint de de login\r\n  - Passo 4 > listaLoteEstoqueBean -> null"
+			},
+			"response": []
+		},
+		{
+			"name": "2-Requisição - api/cliente/buscarClientes",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/cliente/buscarClientes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cliente",
+						"buscarClientes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3-Requisição - api/cliente/buscarClientePeloId",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/cliente/buscarClientePeloId/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cliente",
+						"buscarClientePeloId",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4-Requisição - api/produto/cadastrar",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\": \"Bola de basquete\", \n    \"descricao\": \"Bola para jogar basquete\", \n    \"quantidade\": \"100\", \n    \"precoUnitario\": 100.00  \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/produto/cadastrar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"produto",
+						"cadastrar"
+					]
+				},
+				"description": "Como chamar o endpoint de inserir item no pedido:\r\n\r\n Primeiro devo chamar os endpoints abaixo para coletar os dados do body:\r\n  - Passo 1 > Pegar um \"itemPedidoVendaBean\" -> Chamar o endpoint de buscarProdutoPeloCodigo\r\n  - Passo 2 > Pegar um \"pedidoVendaBean\"     -> Chamar o endpoint de iniciarVenda\r\n  - Passo 3 > Pegar um \"usuarioVa\"           -> Chamar o endpoint de de login\r\n  - Passo 4 > listaLoteEstoqueBean -> null"
+			},
+			"response": []
+		},
+		{
+			"name": "5-Requisição - api/produto/buscarProdutos",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/cliente/buscarClientes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cliente",
+						"buscarClientes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "6-Requisição - api/produto/buscarProdutoPeloId",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/cliente/buscarClientePeloId/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cliente",
+						"buscarClientePeloId",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "7-Requisição - api/pedido/buscarPedidos",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/pedido/buscarPedidos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"pedido",
+						"buscarPedidos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "8-Requisição - api/pedido/cadastrar",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/pedido/cadastrar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"pedido",
+						"cadastrar"
+					]
+				},
+				"description": "Como chamar o endpoint de inserir item no pedido:\r\n\r\n Primeiro devo chamar os endpoints abaixo para coletar os dados do body:\r\n  - Passo 1 > Pegar um \"itemPedidoVendaBean\" -> Chamar o endpoint de buscarProdutoPeloCodigo\r\n  - Passo 2 > Pegar um \"pedidoVendaBean\"     -> Chamar o endpoint de iniciarVenda\r\n  - Passo 3 > Pegar um \"usuarioVa\"           -> Chamar o endpoint de de login\r\n  - Passo 4 > listaLoteEstoqueBean -> null"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
