@@ -16,3 +16,6 @@
 
 📍 Link para acessar a aplicação sendo executada na plataforma Heroku:
 
+
+✅ Site pessoal e currículo:
+  - http://eriklima.com/
